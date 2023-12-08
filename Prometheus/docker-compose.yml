@@ -1,0 +1,14 @@
+---
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    user: 1000:1000
+    container_name: prometheus
+    network_mode: prometheus
+    ports:
+      - 9090:9090
+    command: "--config.file=/etc/prometheus/prometheus.yaml  --storage.tsdb.retention.time=365d"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yaml:ro
+      - ./data:/prometheus
+    restart: unless-stopped
