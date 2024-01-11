@@ -1,0 +1,570 @@
+apiVersion: 1
+groups:
+    - orgId: 1
+      name: eg1
+      folder: humidity off
+      interval: 1m
+      rules:
+        - uid: c026220b-d90e-4fb6-883d-545e6204b4f0
+          title: Humidity thin films
+          condition: F
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: d8c0107c-73e1-4be1-9e8f-fda769c02f2d
+              model:
+                datasource:
+                    type: prometheus
+                    uid: d8c0107c-73e1-4be1-9e8f-fda769c02f2d
+                disableTextWrap: false
+                editorMode: builder
+                expr: humidity{place="thin films"}
+                fullMetaSearch: false
+                includeNullMetadata: true
+                instant: false
+                interval: ""
+                intervalMs: 15000
+                legendFormat: Thin Films
+                maxDataPoints: 43200
+                range: true
+                refId: A
+                useBackend: false
+            - refId: D
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params: []
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - D
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    type: __expr__
+                    uid: __expr__
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: D
+                type: reduce
+            - refId: F
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 15
+                            - 75
+                        type: outside_range
+                      operator:
+                        type: and
+                      query:
+                        params: []
+                      reducer:
+                        params: []
+                        type: avg
+                      type: query
+                datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                expression: D
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: F
+                type: threshold
+          dashboardUid: acd00eae-79a3-40e7-8cfe-7026be55a518
+          panelId: 25
+          noDataState: NoData
+          execErrState: Alerting
+          for: 5m
+          annotations:
+            __dashboardUid__: acd00eae-79a3-40e7-8cfe-7026be55a518
+            __panelId__: "25"
+          labels: {}
+          isPaused: false
+        - uid: f1ffeb1f-ea8a-4e19-8c20-95d360642e42
+          title: Humidity Lithography
+          condition: F
+          data:
+            - refId: B
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: d8c0107c-73e1-4be1-9e8f-fda769c02f2d
+              model:
+                datasource:
+                    type: prometheus
+                    uid: d8c0107c-73e1-4be1-9e8f-fda769c02f2d
+                disableTextWrap: false
+                editorMode: builder
+                expr: humidity{place="lithography"}
+                fullMetaSearch: false
+                includeNullMetadata: true
+                instant: false
+                interval: ""
+                intervalMs: 15000
+                legendFormat: Lithography
+                maxDataPoints: 43200
+                range: true
+                refId: B
+                useBackend: false
+            - refId: D
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params: []
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - D
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    type: __expr__
+                    uid: __expr__
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: D
+                type: reduce
+            - refId: F
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 15
+                            - 75
+                        type: outside_range
+                      operator:
+                        type: and
+                      query:
+                        params: []
+                      reducer:
+                        params: []
+                        type: avg
+                      type: query
+                datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                expression: D
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: F
+                type: threshold
+          dashboardUid: acd00eae-79a3-40e7-8cfe-7026be55a518
+          panelId: 25
+          noDataState: NoData
+          execErrState: Alerting
+          for: 5m
+          annotations:
+            __dashboardUid__: acd00eae-79a3-40e7-8cfe-7026be55a518
+            __panelId__: "25"
+          labels: {}
+          isPaused: false
+        - uid: fa8ad00f-35f5-4593-b0bc-02551d44cdd5
+          title: Humidity adv. Lithography
+          condition: F
+          data:
+            - refId: C
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: d8c0107c-73e1-4be1-9e8f-fda769c02f2d
+              model:
+                datasource:
+                    type: prometheus
+                    uid: d8c0107c-73e1-4be1-9e8f-fda769c02f2d
+                disableTextWrap: false
+                editorMode: builder
+                expr: humidity{place="advanced lithography"}
+                fullMetaSearch: false
+                includeNullMetadata: true
+                instant: false
+                interval: ""
+                intervalMs: 15000
+                legendFormat: Adv. Lithography
+                maxDataPoints: 43200
+                range: true
+                refId: C
+                useBackend: false
+            - refId: D
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params: []
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - D
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    type: __expr__
+                    uid: __expr__
+                expression: C
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: D
+                type: reduce
+            - refId: F
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 15
+                            - 75
+                        type: outside_range
+                      operator:
+                        type: and
+                      query:
+                        params: []
+                      reducer:
+                        params: []
+                        type: avg
+                      type: query
+                datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                expression: D
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: F
+                type: threshold
+          dashboardUid: acd00eae-79a3-40e7-8cfe-7026be55a518
+          panelId: 25
+          noDataState: NoData
+          execErrState: Alerting
+          for: 5m
+          annotations:
+            __dashboardUid__: acd00eae-79a3-40e7-8cfe-7026be55a518
+            __panelId__: "25"
+          labels: {}
+          isPaused: false
+    - orgId: 1
+      name: eg1
+      folder: temperature off
+      interval: 1m
+      rules:
+        - uid: d653e19a-0495-4810-9896-22e6ec443ede
+          title: Temperature thin films
+          condition: F
+          data:
+            - refId: A
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: d8c0107c-73e1-4be1-9e8f-fda769c02f2d
+              model:
+                datasource:
+                    type: prometheus
+                    uid: d8c0107c-73e1-4be1-9e8f-fda769c02f2d
+                disableTextWrap: false
+                editorMode: builder
+                expr: temperature{place="thin films"}
+                fullMetaSearch: false
+                includeNullMetadata: true
+                instant: false
+                interval: ""
+                intervalMs: 15000
+                legendFormat: Thin Films
+                maxDataPoints: 43200
+                range: true
+                refId: A
+                useBackend: false
+            - refId: D
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params: []
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - D
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    type: __expr__
+                    uid: __expr__
+                expression: A
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: D
+                type: reduce
+            - refId: F
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 16
+                            - 23
+                        type: outside_range
+                      operator:
+                        type: and
+                      query:
+                        params: []
+                      reducer:
+                        params: []
+                        type: avg
+                      type: query
+                datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                expression: D
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: F
+                type: threshold
+          dashboardUid: acd00eae-79a3-40e7-8cfe-7026be55a518
+          panelId: 24
+          noDataState: NoData
+          execErrState: Alerting
+          for: 5m
+          annotations:
+            __dashboardUid__: acd00eae-79a3-40e7-8cfe-7026be55a518
+            __panelId__: "24"
+          labels: {}
+          isPaused: false
+        - uid: d441edc9-7dcf-45d8-b575-ed33815e4a5e
+          title: Temperature lithography
+          condition: F
+          data:
+            - refId: B
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: d8c0107c-73e1-4be1-9e8f-fda769c02f2d
+              model:
+                datasource:
+                    type: prometheus
+                    uid: d8c0107c-73e1-4be1-9e8f-fda769c02f2d
+                disableTextWrap: false
+                editorMode: builder
+                expr: temperature{place="lithography"}
+                fullMetaSearch: false
+                includeNullMetadata: true
+                instant: false
+                interval: ""
+                intervalMs: 15000
+                legendFormat: Lithography
+                maxDataPoints: 43200
+                range: true
+                refId: B
+                useBackend: false
+            - refId: D
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params: []
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - D
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    type: __expr__
+                    uid: __expr__
+                expression: B
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: D
+                type: reduce
+            - refId: F
+              relativeTimeRange:
+                from: 3600
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 17
+                            - 23
+                        type: outside_range
+                      operator:
+                        type: and
+                      query:
+                        params: []
+                      reducer:
+                        params: []
+                        type: avg
+                      type: query
+                datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                expression: D
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: F
+                type: threshold
+          dashboardUid: acd00eae-79a3-40e7-8cfe-7026be55a518
+          panelId: 24
+          noDataState: NoData
+          execErrState: Alerting
+          for: 5m
+          annotations:
+            __dashboardUid__: acd00eae-79a3-40e7-8cfe-7026be55a518
+            __panelId__: "24"
+          labels: {}
+          isPaused: false
+        - uid: d85242b5-571b-4f68-9c5f-db13e81088c9
+          title: Temperature adv. lithography
+          condition: F
+          data:
+            - refId: C
+              relativeTimeRange:
+                from: 300
+                to: 0
+              datasourceUid: d8c0107c-73e1-4be1-9e8f-fda769c02f2d
+              model:
+                datasource:
+                    type: prometheus
+                    uid: d8c0107c-73e1-4be1-9e8f-fda769c02f2d
+                disableTextWrap: false
+                editorMode: builder
+                expr: temperature{place="advanced lithography"}
+                fullMetaSearch: false
+                includeNullMetadata: true
+                instant: false
+                interval: ""
+                intervalMs: 15000
+                legendFormat: Adv. Lithography
+                maxDataPoints: 43200
+                range: true
+                refId: C
+                useBackend: false
+            - refId: D
+              relativeTimeRange:
+                from: 300
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params: []
+                        type: gt
+                      operator:
+                        type: and
+                      query:
+                        params:
+                            - D
+                      reducer:
+                        params: []
+                        type: last
+                      type: query
+                datasource:
+                    type: __expr__
+                    uid: __expr__
+                expression: C
+                intervalMs: 1000
+                maxDataPoints: 43200
+                reducer: last
+                refId: D
+                type: reduce
+            - refId: F
+              relativeTimeRange:
+                from: 300
+                to: 0
+              datasourceUid: __expr__
+              model:
+                conditions:
+                    - evaluator:
+                        params:
+                            - 17
+                            - 23
+                        type: outside_range
+                      operator:
+                        type: and
+                      query:
+                        params: []
+                      reducer:
+                        params: []
+                        type: avg
+                      type: query
+                datasource:
+                    name: Expression
+                    type: __expr__
+                    uid: __expr__
+                expression: D
+                intervalMs: 1000
+                maxDataPoints: 43200
+                refId: F
+                type: threshold
+          dashboardUid: acd00eae-79a3-40e7-8cfe-7026be55a518
+          panelId: 24
+          noDataState: NoData
+          execErrState: Alerting
+          for: 5m
+          annotations:
+            __dashboardUid__: acd00eae-79a3-40e7-8cfe-7026be55a518
+            __panelId__: "24"
+          labels: {}
+          isPaused: false
