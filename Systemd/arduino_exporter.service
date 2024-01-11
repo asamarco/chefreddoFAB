@@ -1,0 +1,14 @@
+[Unit]
+Description=Arduino Prometheus Exporter
+After=multi-user.target
+StartLimitIntervalSec=500
+StartLimitBurst=5
+
+[Service]
+Restart=on-failure
+RestartSec=5s
+ExecStart=/home/user/.local/bin/arduino_exporter server run -p 8000 -s /dev/ttyUSB2 -b 115200
+User=user
+[Install]
+WantedBy=multi-user.target
+
