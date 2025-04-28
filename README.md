@@ -1,7 +1,7 @@
 # chefreddoFAB
 ========================
 
-*chefreddoFAB* alternatively known as *checaldoFAB* is an enviromental monitor (temperature, humidity, pressure) originally designed for the [poliFAB](https://polifab.polimi.it) cleanroom. It is based on sensor BME280, arduino, [arduino_exporter](https://github.com/Clivern/arduino_exporter), prometheus and grafana.
+*chefreddoFAB* alternatively known as *checaldoFAB* is an enviromental monitor (temperature, humidity, pressure) originally designed for the [poliFAB](https://polifab.polimi.it) cleanroom. It is based on sensors BME280 or AHT20, arduino, [arduino_exporter](https://github.com/Clivern/arduino_exporter), prometheus and grafana.
 
 ![Screenshot](https://github.com/user-attachments/assets/369a396a-c30e-44cc-8224-c94cf5156655)
 
